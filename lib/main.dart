@@ -36,17 +36,35 @@ class TaskListPage extends StatelessWidget {
         title: const Text("Task List"),
       ),
       body: Center(
-        child: Column(
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text('Next Page')
-            )
-          ],
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) {
+                return const TaskCreatePage();
+              }),
+            );
+          },
+          child: const Text('Add'),
+        ),
+      ),
+    );
+  }
+}
+
+class TaskCreatePage extends StatelessWidget {
+  const TaskCreatePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("Add task")),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text("Go back"),
         ),
       ),
     );
