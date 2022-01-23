@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Task Manager',
       theme: ThemeData(
         // Try running your application with "flutter run". You'll see the
         // application has a blue toolbar. Then, without quitting the app, try
@@ -21,27 +21,19 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const TaskListPage(title: 'Flutter Demo Home Page'),
+      home: const TaskListPage(),
     );
   }
 }
 
-class TaskListPage extends StatefulWidget {
-  const TaskListPage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<TaskListPage> createState() => _TaskListPageState();
-}
-
-class _TaskListPageState extends State<TaskListPage> {
+class TaskListPage extends StatelessWidget {
+  const TaskListPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: const Text("タイトル"),
       ),
       body: Center(
         child: Column(
@@ -49,12 +41,6 @@ class _TaskListPageState extends State<TaskListPage> {
           // "Toggle Debug Paint" action from the Flutter Inspector in Android
           // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
           // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
           children: const <Widget>[
             Text(
               'You have pushed the button this many times:',
