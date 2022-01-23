@@ -33,7 +33,7 @@ class TaskListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("タイトル"),
+        title: const Text("Task List"),
       ),
       body: Center(
         child: Column(
@@ -41,10 +41,11 @@ class TaskListPage extends StatelessWidget {
           // "Toggle Debug Paint" action from the Flutter Inspector in Android
           // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
           // to see the wireframe for each widget.
-          children: const <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
+          children: <Widget>[
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Next Page')
+            )
           ],
         ),
       ),
