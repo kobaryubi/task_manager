@@ -10,18 +10,29 @@ class TaskListPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Task List"),
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) {
-                return const TaskCreatePage();
-              }),
-            );
-          },
-          child: const Text('Add'),
-        ),
+      body: ListView(
+        children: const [
+          Card(
+            child: ListTile(
+              title: Text("ニンジン"),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text("タマネギ"),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text("ジャガイモ"),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text("カレールー"),
+            ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
